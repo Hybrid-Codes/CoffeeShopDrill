@@ -7,13 +7,21 @@ public class CoffeeDrink : MenuItem
     public override string Name => throw new NotImplementedException();
     public enum Size
     {
-        Small = 1.0,
-        Regular = 1.2,
-        Large = 1.4
+        Small,
+        Regular,
+        Large
     }
+
+    private static double SizeMultiplier(this Size size) => size switch
+    {
+        Size.Small => 1.0,
+        Size.Regular => 1.2,
+        Size.Large => 1.4,
+        _ => throw new ArgumentOutOfRangeException(nameof(size), size, "Unknown Size")
+    };
 
     public override decimal PriceCalculation()
     {
-        throw new NotImplementedException();
+        
     }
 }

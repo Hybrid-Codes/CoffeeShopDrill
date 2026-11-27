@@ -10,7 +10,8 @@ public class MenuPriceList : IPriceList
             {"Cappuccino", 36.00m},
             {"Hot Chocolate", 32.00m},
             {"Blueberry Muffin", 30.00m}
-    }
+    };
+    
     public decimal GetBasePrice (string itemName)
     {
 
