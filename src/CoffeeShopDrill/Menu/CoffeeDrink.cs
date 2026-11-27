@@ -1,3 +1,6 @@
+using CoffeShopDrill.Menu;
+using static CoffeShopDrill.Menu.DrinkSize;
+
 namespace CoffeeShopDrill.Menu;
 
 // TODO: Implement CoffeeDrink (README, step 3).
@@ -5,23 +8,12 @@ namespace CoffeeShopDrill.Menu;
 public class CoffeeDrink : MenuItem
 {
     public override string Name => throw new NotImplementedException();
-    public enum Size
-    {
-        Small,
-        Regular,
-        Large
-    }
 
-    private static double SizeMultiplier(this Size size) => size switch
-    {
-        Size.Small => 1.0,
-        Size.Regular => 1.2,
-        Size.Large => 1.4,
-        _ => throw new ArgumentOutOfRangeException(nameof(size), size, "Unknown Size")
-    };
 
-    public override decimal PriceCalculation()
+    public override decimal PriceCalculation(decimal basePrice)
     {
-        
+        decimal price = basePrice * DrinkSize.SizeMultiplier();
+        return price;
     }
 }
+

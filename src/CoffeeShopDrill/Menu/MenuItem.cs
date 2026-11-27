@@ -10,7 +10,7 @@ public abstract class MenuItem
 {
     public abstract string Name {get;}
 
-    public abstract decimal PriceCalculation();
+    public abstract decimal PriceCalculation(decimal basePrice);
 
     public decimal RoundToCents(decimal amount)
     {
