@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace CoffeeShopDrill.Menu;
 
 // TODO: Implement DailySpecial (README, step 3).
@@ -9,7 +7,7 @@ public class DailySpecial : MenuItem
 {
     public override string Name => "Daily Special";
 
-    public override decimal PriceCalculation(decimal basePrice)
+    public override decimal CalculatePrice(decimal basePrice)
     {
         if (basePrice >= 0)
         {
@@ -19,7 +17,7 @@ public class DailySpecial : MenuItem
         return basePrice;
     }
 
-    public override virtual string Describe(decimal price)
+    public override string Describe(decimal price)
     {
         return $"{Name}: R{price}";
     }

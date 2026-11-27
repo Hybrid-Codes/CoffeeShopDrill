@@ -8,9 +8,9 @@ namespace CoffeeShopDrill.Menu;
 // and a virtual Describe method that children may override.
 public abstract class MenuItem
 {
-    public abstract string Name {get;}
+    public abstract string Name { get; }
 
-    public abstract decimal PriceCalculation(decimal basePrice);
+    public abstract decimal CalculatePrice(decimal basePrice);
 
     public decimal RoundToCents(decimal amount)
     {
