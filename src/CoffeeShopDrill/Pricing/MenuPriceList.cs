@@ -11,22 +11,13 @@ public class MenuPriceList : IPriceList
             {"Hot Chocolate", 32.00m},
             {"Blueberry Muffin", 30.00m}
     };
-    
-    public decimal GetBasePrice (string itemName)
+    public decimal GetBasePrice(string itemName)
     {
-
-
         if (!Prices.TryGetValue(itemName, out var item))
         {
             throw new ArgumentException($"{itemName} is not on the menu.");
         }
 
         return Prices[itemName];
-
-    }
-
-    public MenuPriceList FixedPriceList()
-    {
-
     }
 }

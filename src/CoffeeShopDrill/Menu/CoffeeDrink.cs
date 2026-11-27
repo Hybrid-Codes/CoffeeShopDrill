@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace CoffeeShopDrill.Menu;
 
 // TODO: Implement CoffeeDrink (README, step 3).
@@ -19,5 +21,9 @@ public class CoffeeDrink : MenuItem
         decimal price = basePrice * DrinkSizeExtensions.SizeMultiplier(_size);
         return base.RoundToCents(price);
     }
-}
 
+    public override string Describe(decimal price)
+    {
+        return $"{Name} ({_size}): R{price: 00.00}";
+    }
+}

@@ -5,6 +5,4 @@ namespace CoffeeShopDrill.Pricing;
 public interface IPriceList
 {
     decimal GetBasePrice(string itenName);
-
-
 }
