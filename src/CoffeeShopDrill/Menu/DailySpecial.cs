@@ -20,12 +20,14 @@ public class DailySpecial : MenuItem
 
     public override decimal CalculatePrice(decimal basePrice)
     {
-        if (basePrice >= 0)
+        decimal result = basePrice - _discount;
+
+        if(result < 0)
         {
-            Describe(basePrice);
+            return 0;
         }
 
-        return basePrice - _discount;
+        return base.RoundToCents(result);
     }
 
     public override string Describe(decimal price)
