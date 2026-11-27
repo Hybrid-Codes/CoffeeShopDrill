@@ -19,6 +19,6 @@ public abstract class MenuItem
 
     public virtual string Describe(decimal price)
     {
-        return $"{Name}: R{price: 0.00}";
+        return $"{Name}: R{price:0.00}";
     }
 }

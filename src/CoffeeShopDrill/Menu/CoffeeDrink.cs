@@ -24,6 +24,6 @@ public class CoffeeDrink : MenuItem
 
     public override string Describe(decimal price)
     {
-        return $"{Name} ({_size}): R{price: 00.00}";
+        return $"{Name} ({_size}): R{price:00.00}";
     }
 }
