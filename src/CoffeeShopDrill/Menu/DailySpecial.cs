@@ -1,3 +1,5 @@
+using System.IO.Pipelines;
+
 namespace CoffeeShopDrill.Menu;
 
 // TODO: Implement DailySpecial (README, step 3).
@@ -5,7 +7,16 @@ namespace CoffeeShopDrill.Menu;
 
 public class DailySpecial : MenuItem
 {
-    public override string Name => "Daily Special";
+    public override string Name => _name;
+
+    private readonly string _name;
+    private readonly decimal _discount;
+
+    public DailySpecial(string name, decimal discount)
+    {
+        _name = name;
+        _discount = discount;
+    }
 
     public override decimal CalculatePrice(decimal basePrice)
     {
@@ -14,11 +25,12 @@ public class DailySpecial : MenuItem
             Describe(basePrice);
         }
 
-        return basePrice;
+        return basePrice - _discount;
     }
 
     public override string Describe(decimal price)
     {
-        return $"{Name}: R{price}";
+        string? result = base.Describe(price);
+        return $"{result} (daily special)";
     }
 }
