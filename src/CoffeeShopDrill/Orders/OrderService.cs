@@ -4,10 +4,14 @@ namespace CoffeeShopDrill.Orders;
 
 // TODO: Implement OrderService (README, step 4).
 // Depends on IPriceList through its constructor. Produces receipt lines and a total for a list of menu items.
-internal class OrderService : IPriceList
+public class OrderService(IPriceList priceList)
 {
-    public decimal GetBasePrice(string itenName)
+    private decimal GetTotal()
     {
-        throw new NotImplementedException();
+
+    }
+    private string GetReceipt()
+    {
+
     }
 }
